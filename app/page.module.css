@@ -1,0 +1,343 @@
+.container {
+  min-height: 100vh;
+  padding: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 30px;
+  padding-top: 20px;
+}
+
+.title {
+  font-size: 2.5rem;
+  color: white;
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+.subtitle {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1rem;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.emptyState {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 40px 20px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.emptyText {
+  color: #666;
+  font-size: 1.1rem;
+}
+
+.habitList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.habitCard {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 16px;
+  border-radius: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.habitCard:active {
+  transform: scale(0.98);
+}
+
+.habitHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+}
+
+.habitIcon {
+  font-size: 2rem;
+  min-width: 40px;
+  text-align: center;
+}
+
+.habitInfo {
+  flex: 1;
+  min-width: 0;
+}
+
+.habitName {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 4px;
+  font-weight: 600;
+}
+
+.habitMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.85rem;
+}
+
+.streak {
+  color: #ff6b6b;
+  font-weight: 600;
+}
+
+.reminder {
+  color: #667eea;
+  font-weight: 500;
+}
+
+.habitActions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.checkButton {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 3px solid #667eea;
+  background: white;
+  color: #667eea;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.checkButton:hover {
+  transform: scale(1.05);
+}
+
+.checkButton.checked {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-color: #764ba2;
+  animation: checkPulse 0.3s ease;
+}
+
+@keyframes checkPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+
+.deleteButton {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 107, 107, 0.1);
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.deleteButton:hover {
+  background: rgba(255, 107, 107, 0.2);
+  transform: scale(1.05);
+}
+
+.addForm {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.input {
+  width: 100%;
+  padding: 14px;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  font-size: 1rem;
+  margin-bottom: 16px;
+  transition: border-color 0.2s;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+.iconSelector {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.iconButton {
+  padding: 12px;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  background: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.iconButton:hover {
+  transform: scale(1.05);
+  border-color: #667eea;
+}
+
+.iconButton.iconSelected {
+  border-color: #667eea;
+  background: rgba(102, 126, 234, 0.1);
+  transform: scale(1.05);
+}
+
+.reminderSection {
+  margin-bottom: 16px;
+}
+
+.reminderLabel {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 0.9rem;
+  color: #666;
+  font-weight: 500;
+}
+
+.timeInput {
+  padding: 12px;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  font-size: 1rem;
+  transition: border-color 0.2s;
+}
+
+.timeInput:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+.formActions {
+  display: flex;
+  gap: 12px;
+}
+
+.saveButton {
+  flex: 1;
+  padding: 14px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.saveButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.cancelButton {
+  flex: 1;
+  padding: 14px;
+  background: rgba(0, 0, 0, 0.05);
+  color: #666;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.cancelButton:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.addButton {
+  width: 100%;
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.95);
+  color: #667eea;
+  border: 2px dashed #667eea;
+  border-radius: 16px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+}
+
+.addButton:hover {
+  background: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(102, 126, 234, 0.2);
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 16px;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .habitCard {
+    padding: 12px;
+  }
+
+  .habitName {
+    font-size: 1rem;
+  }
+
+  .checkButton {
+    width: 44px;
+    height: 44px;
+    font-size: 1.3rem;
+  }
+
+  .iconSelector {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 6px;
+  }
+
+  .iconButton {
+    padding: 10px;
+    font-size: 1.3rem;
+  }
+}
